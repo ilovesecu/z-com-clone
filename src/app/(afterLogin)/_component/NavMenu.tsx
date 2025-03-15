@@ -40,7 +40,7 @@ export default function NavMenu(){
                 </Link>
             </li>
             <li>
-                <Link href="/explore">
+                <Link href="/search">
                     <div className={style.navPill}>
                         {segment && (['search', 'explore'].includes(segment)) ?
                             <>
