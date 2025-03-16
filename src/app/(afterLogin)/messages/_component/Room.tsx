@@ -15,7 +15,7 @@ export default function Room() {
     const user = {
         id: 'hero',
         nickname: '영웅',
-        Messages: [
+        Messages: [ //조인한 컬럼들은 다 대문자
             {roomId: 123, content: '안녕하세요.', createdAt: new Date()},
             {roomId: 123, content: '안녕히가세요.', createdAt: new Date()},
         ],
