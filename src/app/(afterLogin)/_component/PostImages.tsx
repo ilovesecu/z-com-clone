@@ -44,11 +44,19 @@ export default function PostImages({post}: Props) {
     }
     if (post.Images.length === 3) {
         return (
-            <Link href={`/${post.User.id}/status/${post.postId}/photo/${post.Images[0].imageId}`}
-                  className={cx(style.postImageSection, style.threeImage)}
-            >
-                <img src={post.Images[0]?.link} alt=""/>
-            </Link>
+            <div className={cx(style.postImageSection, style.twoImage)}>
+                <Link href={`/${post.User.id}/status/${post.postId}/photo/${post.Images[0].imageId}`}
+                      style={{backgroundImage: `url(${post.Images[0]?.link})`, backgroundSize:'cover'}}
+                ></Link>
+                <div>
+                <Link href={`/${post.User.id}/status/${post.postId}/photo/${post.Images[1].imageId}`}
+                      style={{backgroundImage: `url(${post.Images[1]?.link})`, backgroundSize:'cover'}}
+                ></Link>
+                <Link href={`/${post.User.id}/status/${post.postId}/photo/${post.Images[2].imageId}`}
+                      style={{backgroundImage: `url(${post.Images[2]?.link})`, backgroundSize:'cover'}}
+                ></Link>
+                </div>
+            </div>
         )
     }
     if (post.Images.length === 4) {

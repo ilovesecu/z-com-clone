@@ -28,7 +28,9 @@ export default function Post({noImage=false}:Props){
 
     if(Math.random() > 0.5 && !noImage){
         target.Images.push(
-            {imageId:1, link:faker.image.urlLoremFlickr()}
+            {imageId:1, link:faker.image.urlLoremFlickr()},
+            {imageId:2, link:faker.image.urlLoremFlickr()},
+            {imageId:3, link:faker.image.urlLoremFlickr()}
         )
     }
 
