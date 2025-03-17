@@ -19,9 +19,21 @@
 .leftSectionFixed {
     position: fixed;
     width: inherit;
+    padding: 0 8px;
     height: 100dvh;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+@media all and (min-width: 1300px) {
+    .leftSection {
+        width: 275px;
+    }
+    .leftSectionFixed {
+        align-items: flex-start;
+    }
+
 }
 
 .leftSectionFixed nav {
@@ -69,6 +81,29 @@
     background-color: rgb(26, 140, 216);
 }
 
+.postButton span {
+    display: none;
+}
+.postButton svg {
+    display: inline-block;
+    fill: white;
+    width: 24px;
+}
+
+@media all and (min-width: 1300px) {
+    .postButton {
+        height: 52px;
+        width: 234px;
+        border-radius: 26px;
+    }
+    .postButton span {
+        display: inline-block;
+    }
+    .postButton svg {
+        display: none;
+    }
+}
+
 .rightSectionWrapper {
     display: flex;
     align-items: flex-start;
@@ -82,6 +117,17 @@
     width: 990px;
     display: flex;
     justify-content: space-between;
+}
+
+@media all and (min-width: 1024px) {
+    .rightSection {
+        display: inline-block;
+        width: 350px;
+        height: 100%;
+    }
+    .rightSectionInner {
+        width: 990px;
+    }
 }
 
 .main {
