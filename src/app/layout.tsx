@@ -1,6 +1,7 @@
 import type {Metadata} from "next";
-import {Geist, Geist_Mono} from "next/font/google";
+import {Geist, Geist_Mono, Inter} from "next/font/google";
 import "./globals.css";
+import {MSWProvider} from "@/app/_component/MSWComponent";
 
 
 const geistSans = Geist({
@@ -12,6 +13,11 @@ const geistMono = Geist_Mono({
     variable: "--font-geist-mono",
     subsets: ["latin"],
 });
+
+if (process.env.NEXT_RUNTIME === 'nodejs' && process.env.NODE_ENV !== 'production') {
+    const { server } = require('@/mocks/http')
+    server.listen()
+}
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -26,9 +32,9 @@ export default function RootLayout({
     return (
         <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable}`}>
-
+        <MSWProvider>
         {children}
-
+        </MSWProvider>
         </body>
         </html>
     );
